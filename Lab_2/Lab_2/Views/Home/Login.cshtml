@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_OuterLayout.cshtml";
+}
+
+<h2>
+    @*@ViewBag.Uname
+        @ViewBag.Pass*@
+    @if (Model != null)
+    {@Model.Username
+    @Model.Password
+}
+</h2>
+<h2>Login</h2>
+@*@Html.ValidationSummary()*@
+<form action="" method="post">
+    Username: <input type="text" value="@(Model==null ? "":Model.Username)" name="Username" /><br />
+    <span class="text-danger">@Html.ValidationMessage("Username")</span>
+    <br />
+    Password: <input type="text" value="@(Model==null ? "":Model.Password)" name="Password" /><br />
+    <span class="text-danger">@Html.ValidationMessage("Password")</span>
+    <br />
+    <input type="submit" value="Login" class="btn btn-danger" />
+</form>

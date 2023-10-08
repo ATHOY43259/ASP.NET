@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_OuterLayout.cshtml";
+}
+@*@{ 
+    bool CheckGender(string gender) {
+        if (Model != null && Model.Gender != null &&
+            Model.Gender.Equals(gender)) {
+            return true;
+        }
+        return false;
+    }
+
+    bool CheckProfession(string profession)
+    {
+        if (Model != null && Model.Profession != null)
+        {
+            if (Model.Profession.Equals(profession))
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    bool CheckHobbies(string hobby) {
+        if (Model != null &&  Model.Hobbies != null)
+        {
+            foreach (var h in Model.Hobbies) {
+                if (h.Equals(hobby)) return true;
+            }
+        }
+        return false;
+    }
+}
+*@
+<h2>SignUp</h2>
+@*@Html.ValidationSummary()*@
+
+<form action="" method="post">
+    Name : <input type="text" value="@(Model==null ? "":Model.Name)" name="Name" /><br />
+    <span class="text-danger">@Html.ValidationMessage("Name")</span>
+    <br />
+    UserID:<input type="text" value="@(Model==null ? "":Model.UserID)" name="UserID" /><br />
+    <span class="text-danger">@Html.ValidationMessage("UserID")</span>
+    <br />
+    Password:
+    <input type="text" value="@(Model==null ? "":Model.Password)" name="Password" /><br />
+    <span class="text-danger">@Html.ValidationMessage("Password")</span>
+    <br />
+    ID:
+    <input type="text" value="@(Model==null ? "":Model.ID)" name="ID" /><br />
+    <span class="text-danger">@Html.ValidationMessage("ID")</span>
+    <br />
+    Email:<input type="text" value="@(Model==null ? "":Model.Email)" name="Email" /><br />
+    <span class="text-danger">@Html.ValidationMessage("Email")</span>
+    <br />
+
+    DOB:<input type="date" value="@(Model==null ? "":Model.DOB)" name="DOB" /><br />
+    <span class="text-danger">@Html.ValidationMessage("DOB")</span>
+    <br />
+    <input type="submit" value="Sign Up" />
+</form>
